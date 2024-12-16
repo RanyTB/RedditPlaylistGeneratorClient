@@ -2,5 +2,13 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
-  }
+  },
+
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"],
+      "rewrite": "https://redditplaylistgenerator-exbbb4czgnhze5ae.norwayeast-01.azurewebsites.net"
+    }
+  ]
 }
