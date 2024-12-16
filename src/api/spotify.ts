@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const REDIRECT_URI = import.meta.env.SPOTIFY_REDIRECT_URI;
+const REDIRECT_URI = import.meta.env.VITE_SPOTIFY_REDIRECT_URI;
 
 export const authenticateToSpotify = async () => {
   const verifier = generateCodeVerifier();
