@@ -11,10 +11,11 @@ export default defineConfig({
     proxy: {
       "/api": {
         target:
-          "https://redditplaylistgenerator-dev-fubjhzake9adape6.norwayeast-01.azurewebsites.net/",
+          process.env.PROXY_BACKEND === "true"
+            ? "https://redditplaylistgenerator-dev-fubjhzake9adape6.norwayeast-01.azurewebsites.net"
+            : "https://localhost:7006",
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
